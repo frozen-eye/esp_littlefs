@@ -13,6 +13,11 @@
 #include <string.h>
 #include <inttypes.h>
 #include "esp_heap_caps.h"
+#include "sdkconfig.h"
+
+#if CONFIG_LITTLEFS_READONLY
+#define LFS_READONLY
+#endif
 
 #ifndef LFS_NO_MALLOC
 #include <stdlib.h>

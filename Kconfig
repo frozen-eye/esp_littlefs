@@ -143,4 +143,13 @@ menu "LittleFS"
             In LittleFS flush() does not write data to the flash, and fsync() call needed after.
             With this feature fflush() will write data to the storage.
 
+    config LITTLEFS_READONLY
+        bool "READONLY Filesystem"
+        default "n"
+        help
+            This will limit littlefs to functions that do not modify the disk, but will reduce the
+            code cost to ~1/3. This is a great addition for bootloaders or other applications where
+            a small, read-only storage blob is useful.
+            
+
 endmenu
